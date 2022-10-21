@@ -2,38 +2,53 @@ package com.uninassau.comandadigital;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.google.android.material.textfield.TextInputEditText;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity<total> extends AppCompatActivity {
 
-    private CheckBox checkCalabresa, checkPortuguesa, checkFcatupiry, checkCatupiry, checkCheddar,
-            checkCcheese, check2litros, check1litro, check500ml;
 
-    private TextInputEditText inputPedido, inputCliente, inputPizza, inputBorda, inputRefrigerante,
-            inputTotal;
+    private RadioGroup radioGroupPizza, radioGroupBorda, radioGroupRefrigerante;
 
-    private TextView textTeste;
+    private RadioButton radioButtonCalabresa, radioButtonPortuguesa, radioButtonFCatupiry,
+            radioButtonCatupiry, radioButtonCheddar, radioButtonC_Cheese, radioButton2L,
+            radioButton1L, radioButton500ml;
 
+    private TextInputEditText inputPedido;
+    private TextInputEditText inputCliente;
+    private TextInputEditText inputPizza;
+    private TextInputEditText inputBorda;
+    private TextInputEditText inputRefrigerante;
+    private TextInputEditText inputTotal;
+
+    private TextView textResumo;
+
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        checkCalabresa = findViewById(R.id.checkCalabresa);
-        checkPortuguesa = findViewById(R.id.checkPortuguesa);
-        checkFcatupiry = findViewById(R.id.checkFcatupiry);
-        checkCatupiry = findViewById(R.id.checkCatupiry);
-        checkCheddar = findViewById(R.id.checkCheddar);
-        checkCcheese = findViewById(R.id.checkCcheese);
-        check2litros = findViewById(R.id.check2litros);
-        check1litro = findViewById(R.id.check1litro);
-        check500ml = findViewById(R.id.check500ml);
+        radioButtonCalabresa = findViewById(R.id.radioButtonCalabresa);
+        radioButtonPortuguesa = findViewById(R.id.radioButtonPortuguesa);
+        radioButtonFCatupiry = findViewById(R.id.radioButtonFCatupiry);
+        radioButtonCatupiry = findViewById(R.id.radioButtonCatupiry);
+        radioButtonCheddar = findViewById(R.id.radioButtonCheddar);
+        radioButtonC_Cheese = findViewById(R.id.radioButtonC_Cheese);
+        radioButton2L = findViewById(R.id.radioButton2L);
+        radioButton1L = findViewById(R.id.radioButton1L);
+        radioButton500ml = findViewById(R.id.radioButton500ml);
+
+        radioGroupPizza = findViewById(R.id.radioGroupPizza);
+        radioGroupBorda = findViewById(R.id.radioGroupBorda);
+        radioGroupRefrigerante = findViewById(R.id.radioGroupRefrigerante);
 
         inputPedido = findViewById(R.id.inputPedido);
         inputCliente = findViewById(R.id.inputCliente);
@@ -42,65 +57,102 @@ public class MainActivity extends AppCompatActivity {
         inputRefrigerante = findViewById(R.id.inputRefrigerante);
         inputTotal = findViewById(R.id.inputTotal);
 
-        textTeste = findViewById(R.id.textTeste);
+        textResumo = findViewById(R.id.textResumo);
 
-    }
+        inputPedido.isEnabled();
 
-    public void checkBox() {
+        radioGroupPizza.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
 
-        String texto1 = "0.00";
-        String texto2 = "0.00";
-        String texto3 = "0.00";
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
 
-        if (checkCalabresa.isChecked()) {
-//            checkPortuguesa.setChecked(false);
-//            checkFcatupiry.setChecked(false);
-            texto1 = "35.00";
-        }
-        if (checkPortuguesa.isChecked()) {
-//            checkCalabresa.setChecked(false);
-//            checkFcatupiry.setChecked(false);
-            texto1 = "45.00";
-        }
-        if (checkFcatupiry.isChecked()) {
-//            checkCalabresa.setChecked(false);
-//            checkPortuguesa.setChecked(false);
-            texto1 = "55.00";
-        }
-        inputPizza.setText(texto1);
+                if (radioButtonCalabresa.isChecked()) {
+                    inputPizza.setText("35.00");
+                }
+                if (radioButtonPortuguesa.isChecked()) {
+                    inputPizza.setText("45.00");
+                }
+                if (radioButtonFCatupiry.isChecked()) {
+                    inputPizza.setText("55.00");
+                }
+            }
+        });
 
-        if (checkCatupiry.isChecked()) {
-            texto2 = "17.00";
-        }
-        if (checkCheddar.isChecked()) {
-            texto2 = "19.00";
-        }
-        if (checkCcheese.isChecked()) {
-            texto2 = "21,00";
-        }
-        inputBorda.setText(texto2);
+        radioGroupBorda.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
 
-        if (check2litros.isChecked()) {
-            texto3 = "9.00";
-        }
-        if (check1litro.isChecked()) {
-            texto3 = "7,00";
-        }
-        if (check500ml.isChecked()) {
-            texto3 = "5,00";
-        }
-//        inputRefrigerante.setText(texto3);
-//        double valor1 = valorPizza.getText() != null && !valorPizza.getText().isEmpty() ? Double.parseDouble(valorPizza.getText()) : 0;
-//        double valor2 = borda.getText() != null && !borda.getText().isEmpty() ? Double.parseDouble(borda.getText()) : 0;
-//        double valor3 = refrigerante.getText() != null && !refrigerante.getText().isEmpty() ? Double.parseDouble(refrigerante.getText()) : 0;
-//
-//        double soma = (valor1 + valor2 + valor3);
+                if (radioButtonCatupiry.isChecked()) {
+                    inputBorda.setText("17.00");
+                }
+                if (radioButtonCheddar.isChecked()) {
+                    inputBorda.setText("19.00");
+                }
+                if (radioButtonC_Cheese.isChecked()) {
+                    inputBorda.setText("21.00");
+                }
+            }
+        });
+
+        radioGroupRefrigerante.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+
+                if (radioButton2L.isChecked()) {
+                    inputRefrigerante.setText("9.00");
+                }
+                if (radioButton1L.isChecked()) {
+                    inputRefrigerante.setText("7.00");
+                }
+                if (radioButton500ml.isChecked()) {
+                    inputRefrigerante.setText("5.00");
+
+                }
+            }
+        });
+
+        double valor1 = Double.parseDouble(inputPizza.getText().toString());
+        double valor2 = Double.parseDouble(inputBorda.getText().toString());
+        double valor3 = Double.parseDouble(inputRefrigerante.getText().toString());
+
+        double total = (valor1 + valor2 + valor3);
+
+        inputTotal.setText(String.format("%.2f", total));
+
     }
 
     public void confirmar(View view) {
 
-        checkBox();
+        textResumo.setText("\nOlá, " + inputCliente.getText() + ", seu pedido é o nº " + inputPedido.getText()
+                + "\n\nTotal a pagar: R$ " + inputTotal.getText());
+
+        zerar();
 
     }
 
+    public void limpar(View view) {
+        zerar();
+    }
+
+    public void novoPedido(View view) {
+
+
+    }
+
+    public void zerar() {
+        inputPizza.setText("0.00");
+        inputBorda.setText("0.00");
+        inputRefrigerante.setText("0.00");
+        inputTotal.setText("0.00");
+        radioButtonCalabresa.setChecked(false);
+        radioButtonPortuguesa.setChecked(false);
+        radioButtonFCatupiry.setChecked(false);
+        radioButtonCatupiry.setChecked(false);
+        radioButtonCheddar.setChecked(false);
+        radioButtonC_Cheese.setChecked(false);
+        radioButton2L.setChecked(false);
+        radioButton1L.setChecked(false);
+        radioButton500ml.setChecked(false);
+
+    }
 }
