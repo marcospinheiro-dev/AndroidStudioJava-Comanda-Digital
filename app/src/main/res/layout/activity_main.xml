@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
+        android:layout_width="122dp"
+        android:layout_height="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputBorda"
+            android:layout_width="115dp"
+            android:layout_height="wrap_content"
+            android:background="#22A89F"
+            android:focusable="false"
+            android:hint="Borda"
+            android:text="0.00"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout6"
+        android:layout_width="122dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout4">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputTotal"
+            android:layout_width="115dp"
+            android:layout_height="wrap_content"
+            android:background="#22A89F"
+            android:focusable="false"
+            android:hint="Total"
+            android:onClick="total"
+            android:text="0.00"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout4"
+        android:layout_width="122dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputRefrigerante"
+            android:layout_width="115dp"
+            android:layout_height="wrap_content"
+            android:background="#22A89F"
+            android:focusable="false"
+            android:hint="Refrigerante"
+            android:text="0.00"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout3"
+        android:layout_width="122dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputPedido"
+            android:layout_width="115dp"
+            android:layout_height="wrap_content"
+            android:background="#22A89F"
+            android:focusable="false"
+            android:hint="Pedido"
+            android:text="1"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout5"
+        android:layout_width="122dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout2">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputPizza"
+            android:layout_width="115dp"
+            android:layout_height="wrap_content"
+            android:background="#22A89F"
+            android:focusable="false"
+            android:hint="Pizza"
+            android:text='0.00'
+            android:textSize="12sp"
+            android:textStyle="bold" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout2"
+        android:layout_width="122dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout3">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputCliente"
+            android:layout_width="115dp"
+            android:layout_height="wrap_content"
+            android:background="#22A89F"
+            android:hint="Cliente"
+            android:textColorHint="@color/black"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="3dp"
+        android:text="Sabor"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout5" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:text="Refrig"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout6" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:text="Borda"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/textView3"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toEndOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout5" />
+
+    <Button
+        android:id="@+id/buttonConfirmar"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="#005C50"
+        android:onClick="confirmar"
+        android:text="Confirmar"
+        android:textColor="@color/white"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroupBorda" />
+
+    <Button
+        android:id="@+id/buttonNovoPedido"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="20dp"
+        android:backgroundTint="#005C50"
+        android:onClick="novoPedido"
+        android:text="Novo Pedido"
+        android:textColor="@color/white"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/buttonConfirmar"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroupRefrigerante" />
+
+    <TextView
+        android:id="@+id/textResumo"
+        android:layout_width="0dp"
+        android:layout_height="104dp"
+        android:layout_marginTop="4dp"
+        android:background="#44E1CC"
+        android:inputType="textMultiLine"
+        android:padding="5sp"
+        android:singleLine="true"
+        android:text="Resumo da fatura"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonConfirmar" />
+
+    <RadioGroup
+        android:id="@+id/radioGroupPizza"
+        android:layout_width="113dp"
+        android:layout_height="141dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/radioGroupBorda"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2">
+
+        <RadioButton
+            android:id="@+id/radioButtonCalabresa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#22A89F"
+            android:text="Calabresa" />
+
+        <RadioButton
+            android:id="@+id/radioButtonPortuguesa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#22A89F"
+            android:text="Portuguesa" />
+
+        <RadioButton
+            android:id="@+id/radioButtonFCatupiry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#22A89F"
+            android:text="F. Catupiry" />
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/radioGroupBorda"
+        android:layout_width="113dp"
+        android:layout_height="141dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/radioGroupRefrigerante"
+        app:layout_constraintStart_toEndOf="@+id/radioGroupPizza"
+        app:layout_constraintTop_toBottomOf="@+id/textView4">
+
+        <RadioButton
+            android:id="@+id/radioButtonCatupiry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#22A89F"
+            android:text="Catupiry" />
+
+        <RadioButton
+            android:id="@+id/radioButtonCheddar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#22A89F"
+            android:text="Cheddar" />
+
+        <RadioButton
+            android:id="@+id/radioButtonC_Cheese"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#22A89F"
+            android:text="C. Cheese" />
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/radioGroupRefrigerante"
+        android:layout_width="113dp"
+        android:layout_height="141dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/radioGroupBorda"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        app:layout_constraintVertical_bias="0.024">
+
+        <RadioButton
+            android:id="@+id/radioButton2L"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#22A89F"
+            android:text="2 Litros" />
+
+        <RadioButton
+            android:id="@+id/radioButton1L"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#22A89F"
+            android:text="1 Litro" />
+
+        <RadioButton
+            android:id="@+id/radioButton500ml"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#22A89F"
+            android:text="500 ml" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/buttonLimpar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="#005C50"
+        android:onClick="limpar"
+        android:text="Limpar"
+        android:textColor="@color/white"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/buttonConfirmar"
+        app:layout_constraintHorizontal_bias="0.463"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroupPizza" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName"
+        android:layout_width="407dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="4dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="PIZZARIA DA BELA"
+        android:textAlignment="center"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonEnviar"
+        android:layout_width="135dp"
+        android:layout_height="52dp"
+        android:background="@android:drawable/ic_dialog_email"
+        android:onClick="enviar"
+        app:cornerRadius="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textResumo" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
