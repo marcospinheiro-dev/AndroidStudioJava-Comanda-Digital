@@ -76,11 +76,7 @@ public class MainActivity<total> extends AppCompatActivity {
                 if (radioButtonFCatupiry.isChecked()) {
                     inputPizza.setText("55.00");
                 }
-                double valor1 = Double.parseDouble(inputPizza.getText().toString());
-                double valor2 = Double.parseDouble(inputBorda.getText().toString());
-                double valor3 = Double.parseDouble(inputRefrigerante.getText().toString());
-                double total = (valor1 + valor2 + valor3);
-                inputTotal.setText(String.format("%.2f", total));
+                somatorio();
             }
         });
 
@@ -98,11 +94,7 @@ public class MainActivity<total> extends AppCompatActivity {
                     inputBorda.setText("21.00");
 
                 }
-                double valor1 = Double.parseDouble(inputPizza.getText().toString());
-                double valor2 = Double.parseDouble(inputBorda.getText().toString());
-                double valor3 = Double.parseDouble(inputRefrigerante.getText().toString());
-                double total = (valor1 + valor2 + valor3);
-                inputTotal.setText(String.format("%.2f", total));
+                somatorio();
             }
         });
 
@@ -119,15 +111,19 @@ public class MainActivity<total> extends AppCompatActivity {
                 if (radioButton500ml.isChecked()) {
                     inputRefrigerante.setText("5.00");
                 }
-                double valor1 = Double.parseDouble(inputPizza.getText().toString());
-                double valor2 = Double.parseDouble(inputBorda.getText().toString());
-                double valor3 = Double.parseDouble(inputRefrigerante.getText().toString());
-                double total = (valor1 + valor2 + valor3);
-                inputTotal.setText(String.format("%.2f", total));
+                somatorio();
             }
         });
 
 
+    }
+
+    private void somatorio() {
+        double valor1 = Double.parseDouble(inputPizza.getText().toString());
+        double valor2 = Double.parseDouble(inputBorda.getText().toString());
+        double valor3 = Double.parseDouble(inputRefrigerante.getText().toString());
+        double total = (valor1 + valor2 + valor3);
+        inputTotal.setText(String.format("%.2f", total));
     }
 
     public void confirmar(View view) {
@@ -180,6 +176,5 @@ public class MainActivity<total> extends AppCompatActivity {
         radioButton500ml.setChecked(false);
         textResumo.setText("Resumo da fatura");
     }
-
 
 }
